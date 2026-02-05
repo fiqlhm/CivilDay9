@@ -18,6 +18,19 @@
             margin: 0;
             padding: 0;
         }
+        /* Full-width glow divider between main sections */
+        .glow-divider-full {
+            width: 100%;
+            height: 6px;
+            background: linear-gradient(90deg, rgba(247,210,74,1) 0%, rgba(179,138,227,1) 100%);
+            box-shadow: 0 0 22px rgba(247,210,74,0.35), 0 0 44px rgba(179,138,227,0.18);
+            margin: 0;
+            display: block;
+            pointer-events: none;
+        }
+        @media (min-width: 768px) {
+            .glow-divider-full { height: 8px; }
+        }
     </style>
 </head>
 <body>
@@ -271,9 +284,6 @@
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#F7D24A] via-[#FADF7C] to-[#F3A6D7] drop-shadow-[0_0_15px_rgba(247,210,74,0.8)]">Civil day 9</span>
                         <br/> HMS-ITK.
                         </h1>
-                        <p className="text-lg text-[#B38AE3] mb-8 leading-relaxed">
-                        Dimensions United, Growth Beyond Limits
-                        </p>
                         
                         {/* UPDATE: Tombol lebih kecil di mobile (px-5 py-2.5 text-sm) dan besar di desktop (md:px-8 md:py-4) */}
                         <div className="flex flex-wrap gap-3 md:gap-4">
@@ -286,13 +296,14 @@
                         </div>
                         {/* END UPDATE */}
 
-                        <p className="mt-6 text-sm text-[#FADF7C] font-semibold drop-shadow-[0_0_5px_rgba(247,210,74,0.8)]">Current Event: Registration (RUNNING)</p>
+                        <p className="mt-6 text-sm text-[#FADF7C] font-semibold drop-shadow-[0_0_5px_rgba(247,210,74,0.8)]">Current Event: Registration (OPEN)</p>
                     </div>
                     <div className="hidden md:block relative">
                         <div className="absolute top-0 right-0 w-48 h-48 bg-[#F3A6D7] rounded-full mix-blend-screen filter blur-2xl opacity-30 animate-bounce" style={{animationDuration: '10s'}}></div>
                     </div>
                     </div>
                 </header>
+                <div className="glow-divider-full" />
 
                 {/* About Section */}
                 <section id="about" className="py-24 bg-[#1A0B38] relative">
@@ -321,6 +332,7 @@
                     </p>
                     </div>
                 </section>
+                <div className="glow-divider-full" />
 
                 {/* Stats Section */}
                 <section className="py-20 bg-gradient-to-b from-[#1A0B38] to-[#2D1466] relative">
@@ -352,7 +364,7 @@
                             <ActionButton 
                                 icon={FileText} 
                                 label="Terms Of Reference" 
-                                link="https://link-google-drive-tor-anda.com" 
+                                link="" 
                             />
                             <ActionButton 
                                 icon={ImageIcon} 
@@ -362,13 +374,14 @@
                             <ActionButton 
                                 icon={UploadCloud} 
                                 label="Upload PPT" 
-                                link="https://link-google-form-upload-anda.com" 
+                                link="https://forms.gle/pvmZ5Xucb3djaMVX6" 
                             />
 
                         </div>
                     </div>
                     </div>
                 </section>
+                <div className="glow-divider-full" />
 
                 {/* Past Event Slider Section */}
                 <section id="event" className="py-24 bg-gradient-to-t from-[#1A0B38] to-[#2D1466] relative">
@@ -425,6 +438,7 @@
                         </div>
                     </div>
                 </section>
+                <div className="glow-divider-full" />
 
                 {/* Footer */}
                 <footer className="bg-[#0D041C] text-[#FFF8E6] py-12 border-t-4 border-[#6C63FF]/50 relative">
@@ -442,7 +456,7 @@
                             <a href="#" className="hover:text-[#F7D24A] transition-colors hover:scale-110"><Youtube size={20}/></a>
                         </div>
                         <p>© Taufiq 2026. All rights reserved.</p>
-                        <p className="mt-1 text-[#FADF7C]/50">BUild beyond limits.</p>
+                        <p className="mt-1 text-[#FADF7C]/50">Build beyond limits.</p>
                     </div>
                     </div>
                 </footer>
@@ -458,4 +472,5 @@
     </script>
 </body>
 </html>
+
 
