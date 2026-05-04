@@ -72,6 +72,10 @@
         const Instagram = (props) => <IconWrapper {...props}><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></IconWrapper>;
         const Linkedin = (props) => <IconWrapper {...props}><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></IconWrapper>;
         const Youtube = (props) => <IconWrapper {...props}><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></IconWrapper>;
+        
+        // Ikon baru untuk TOR Finalis & Berita Acara
+        const Star = (props) => <IconWrapper {...props}><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></IconWrapper>;
+        const ClipboardCheck = (props) => <IconWrapper {...props}><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="m9 14 2 2 4-4"/></IconWrapper>;
 
         // --- KOMPONEN-KOMPONEN WEBSITE ---
 
@@ -125,22 +129,22 @@
             </div>
         );
 
-        // 4. Komponen Tombol Samping (TOR, Twibbon, PPT)
+        // 4. Komponen Tombol Samping (TOR, Twibbon, PPT, dll)
         const ActionButton = ({ icon: Icon, label, link = '#' }) => (
             <button 
                 onClick={() => window.open(link, '_blank')}
-                className="group flex items-center justify-between w-full p-5 rounded-xl bg-[#2D1466]/80 border-2 border-[#6C63FF]/30 hover:border-[#F7D24A] hover:bg-[#3A1C7F] transition-all duration-300 text-left shadow-[0_4px_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(247,210,74,0.3)]"
+                className="group flex items-center justify-between w-full p-4 md:p-5 rounded-xl bg-[#2D1466]/80 border-2 border-[#6C63FF]/30 hover:border-[#F7D24A] hover:bg-[#3A1C7F] transition-all duration-300 text-left shadow-[0_4px_15px_rgba(0,0,0,0.2)] hover:shadow-[0_0_20px_rgba(247,210,74,0.3)]"
             >
-                <div className="flex items-center gap-5">
+                <div className="flex items-center gap-4 md:gap-5">
                     <div className="p-3 rounded-lg bg-[#6C63FF]/20 group-hover:bg-[#F7D24A] group-hover:text-[#1A0B38] transition-colors duration-300 text-[#B38AE3]">
-                        <Icon size={28} />
+                        <Icon size={24} />
                     </div>
                     <div>
-                        <span className="block text-xl font-bold text-[#FFF8E6] group-hover:text-[#F7D24A] transition-colors">{label}</span>
-                        <span className="text-xs text-[#FFF8E6]/50 group-hover:text-[#FFF8E6]/80 uppercase tracking-wider">Click to access</span>
+                        <span className="block text-lg md:text-xl font-bold text-[#FFF8E6] group-hover:text-[#F7D24A] transition-colors">{label}</span>
+                        <span className="text-[10px] md:text-xs text-[#FFF8E6]/50 group-hover:text-[#FFF8E6]/80 uppercase tracking-wider">Click to access</span>
                     </div>
                 </div>
-                <ArrowRight className="text-[#6C63FF] group-hover:text-[#F7D24A] transform group-hover:translate-x-2 transition-all duration-300" size={24} />
+                <ArrowRight className="text-[#6C63FF] group-hover:text-[#F7D24A] transform group-hover:translate-x-2 transition-all duration-300" size={20} />
             </button>
         );
 
@@ -285,7 +289,6 @@
                         <br/> HMS-ITK.
                         </h1>
                         
-                        {/* UPDATE: Tombol lebih kecil di mobile (px-5 py-2.5 text-sm) dan besar di desktop (md:px-8 md:py-4) */}
                         <div className="flex flex-wrap gap-3 md:gap-4">
                             <button onClick={handleLearnMoreClick} className="bg-gradient-to-r from-[#F7D24A] to-[#FADF7C] text-[#1A0B38] px-5 py-2.5 md:px-8 md:py-4 text-sm md:text-base rounded-full font-bold shadow-[0_0_25px_rgba(247,210,74,0.5)] hover:shadow-[0_0_40px_rgba(247,210,74,0.8)] hover:scale-105 transition-all flex items-center gap-2">
                                 Our Instagram <ArrowRight size={20} className="w-4 h-4 md:w-5 md:h-5"/>
@@ -294,7 +297,6 @@
                                 Watch Trailer
                             </button>
                         </div>
-                        {/* END UPDATE */}
 
                         <p className="mt-6 text-sm text-[#FADF7C] font-semibold drop-shadow-[0_0_5px_rgba(247,210,74,0.8)]">Current Event: Registration (OPEN)</p>
                     </div>
@@ -359,7 +361,7 @@
                         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
                             <CompetitionCard title="Kompetisi Rancang Bangun Jembatan" icon={Presentation} active={true} link="https://forms.gle/hppVheZ4fYEx9jak8" />
                         </div>
-                        <div className="w-full md:w-1/2 flex flex-col gap-5 max-w-md">
+                        <div className="w-full md:w-1/2 flex flex-col gap-4 max-w-md">
                             
                             <ActionButton 
                                 icon={FileText} 
@@ -375,6 +377,18 @@
                                 icon={UploadCloud} 
                                 label="Upload PPT" 
                                 link="https://forms.gle/pvmZ5Xucb3djaMVX6" 
+                            />
+                            {/* TOMBOL BARU 1 */}
+                            <ActionButton 
+                                icon={Star} 
+                                label="TOR Finalis" 
+                                link="#" 
+                            />
+                            {/* TOMBOL BARU 2 */}
+                            <ActionButton 
+                                icon={ClipboardCheck} 
+                                label="Berita Acara" 
+                                link="#" 
                             />
 
                         </div>
@@ -472,5 +486,3 @@
     </script>
 </body>
 </html>
-
-
